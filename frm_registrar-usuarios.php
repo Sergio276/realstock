@@ -64,7 +64,6 @@
     </header>
     <div class="content">
       <div class="items-container">
-        <a href="frm_crear-roles.php" class="btn btn-blue">Roles</a>
         <div class="search-group">
           <input class="search-bar" name="data" type="text" placeholder="Buscar usuario..." />
           <button class="icon-search">
@@ -131,7 +130,6 @@
             <td>Apellidos</td>
             <td class="cell-center">Estado</td>
             <td class="cell-center">Editar</td>
-            <td class="cell-center">Asignar</td>
           </tr>
           <tbody id="content-table">
             <?php
@@ -159,11 +157,6 @@
                     <td class="cell-center"><img src="img/<?php echo $status_img ?>" alt="" /></td>
                     <td class="cell-center">
                       <div title="Editar" data-btn-modal="true" data-modal="#m-editar-usuario_<?php echo $row['usuario_id'] ?>"><img src="img/editar.png" alt="Editar" /></div>
-                    </td>
-                    <td class="cell-center">
-                      <button class="btn btn-purple" data-btn-modal="true" data-modal="#m-asignar-rol">
-                        <i class="fa-solid fa-unlock-keyhole"></i>Asignar rol
-                      </button>
                     </td>
                   </tr>
 
@@ -245,28 +238,6 @@
     <footer>Copyright 2022</footer>
   </div>
 
-  <div class="modal-wrapper" id="m-asignar-rol">
-    <div class="modal">
-      <div class="modal-header">
-        <div>Asignar rol</div>
-        <i class="fa-solid fa-xmark" data-btn-close="modal"></i>
-      </div>
-      <div class="modal-content">
-        <form action="#">
-          <div class="form-section">
-            <label for="">Rol:</label>
-            <select>
-              <option value="" selected>Seleccione el rol</option>
-              <option value="Super administrador">Super administrador</option>
-              <option value="Administrador">Administrador</option>
-              <option value="Usuario">Usuario</option>
-            </select>
-          </div>
-          <input class="btn btn-green" type="submit" value="Asignar" />
-        </form>
-      </div>
-    </div>
-  </div>
 </body>
 
 </html>
