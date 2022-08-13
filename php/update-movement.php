@@ -13,7 +13,7 @@ if (isset($_POST['update'], $_GET['movement_id'])) {
     $movement_id = $_GET['movement_id'];
 
     $stmt = $conn->prepare("UPDATE tbl_movimiento SET tipo_movimiento = ?, subtipo_movimiento = ?, cantidad = ?, costo_unitario = ?, descripcion = ?, tbl_producto_id = ?, tbl_tercero_id = ? WHERE movimiento_id = ?");
-    $stmt->bind_param('sssssssss', $type_movement, $subtype_movement, $amount, $unit_cost, $description, $product, $third, $movement_id);
+    $stmt->bind_param('ssssssss', $type_movement, $subtype_movement, $amount, $unit_cost, $description, $product, $third, $movement_id);
 
     $stmt->execute();
     if (($stmt) && ($stmt->affected_rows == 1)) {
