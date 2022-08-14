@@ -119,7 +119,7 @@ require_once './php/session-data.php';
                 </div>
                 <div class="form-section">
                   <label for="">Email:</label>
-                  <input type="text" name="email" placeholder="Ingrese el email">
+                  <input type="email" name="email" placeholder="Ingrese el email">
                 </div>
                 <div class="form-section">
                   <label for="">Departamento:</label>
@@ -315,7 +315,7 @@ require_once './php/session-data.php';
                           </div>
                           <div class="form-section">
                             <label for="">Email:</label>
-                            <input type="text" name="email" value="<?php echo $row['email'] ?>" placeholder="Ingrese el email">
+                            <input type="email" name="email" value="<?php echo $row['email'] ?>" placeholder="Ingrese el email">
                           </div>
                           <div class="form-section">
                             <label for="">Departamento:</label>

@@ -94,7 +94,7 @@
                 </div>
                 <div class="form-section">
                   <label for="">Email:</label>
-                  <input type="text" name="email" required placeholder="Ingrese el email..." />
+                  <input type="email" name="email" required placeholder="Ingrese el email..." />
                 </div>
                 <div class="form-section">
                   <label for="">Nombres:</label>
@@ -189,7 +189,7 @@
                           </div>
                           <div class="form-section">
                             <label for="">Email:</label>
-                            <input type="text" placeholder="Ingrese el email..." name="email" value="<?php echo $row['email'] ?>" />
+                            <input type="email" placeholder="Ingrese el email..." name="email" value="<?php echo $row['email'] ?>" />
                           </div>
                           <div class="form-section">
                             <label for="">Nombres:</label>

@@ -104,7 +104,7 @@
               </div>
               <div class="form-section">
                 <label for="">Correo Electronico:</label>
-                <input type="email" name="email" placeholder="Ingrese el correo Electronico..." value="<?php echo $email ?>" />
+                <input type="email" name="email" placeholder="Ingrese el correo electrónico..." value="<?php echo $email ?>" />
               </div>
               <input class="btn btn-green" type="submit" name="update" value="Actualizar" />
           </div>
