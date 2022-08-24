@@ -17,22 +17,35 @@ if (isset($_POST['register'])) {
         </script>';
         exit();
     }
-    $password = password_hash($password, PASSWORD_DEFAULT, array('cost' => 12));
-    $stmt = $conn->prepare("INSERT INTO tbl_usuario (usuario, contrasena, estado, email, nombres, apellidos) VALUES (?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("ssssss", $user, $password, $status, $email, $name, $last_name);
 
-    $stmt->execute();
-    if (($stmt) && ($stmt->affected_rows == 1)) {
-        echo '<script type="text/javascript">
-        alert("El usuario: ' . $user . ' se ha creado con exito");
-        window.location.href = "../frm_registrar-usuarios.php";
-        </script>';
+    $stmt_verify = $conn->prepare("SELECT usuario FROM tbl_usuario WHERE usuario = ?");
+    $stmt_verify->bind_param("s", $user);
+
+    $stmt_verify->execute();
+    $stmt_verify->store_result();
+
+    if (($stmt_verify) && ($stmt_verify->num_rows == 0)) {
+
+        $password = password_hash($password, PASSWORD_DEFAULT, array('cost' => 12));
+        $stmt = $conn->prepare("INSERT INTO tbl_usuario (usuario, contrasena, estado, email, nombres, apellidos) VALUES (?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("ssssss", $user, $password, $status, $email, $name, $last_name);
+    
+        $stmt->execute();
+        if (($stmt) && ($stmt->affected_rows == 1)) {
+            echo '<script type="text/javascript">
+            alert("El usuario: ' . $user . ' se ha creado con exito");
+            window.location.href = "../frm_registrar-usuarios.php";
+            </script>';
+        } else {
+            echo '<script type="text/javascript">
+            alert("Error al registrar el usuario");
+            window.location.href = "../frm_registrar-usuarios.php";
+            </script>';
+        }
     } else {
         echo '<script type="text/javascript">
-        alert("Error al registrar el usuario");
-        window.location.href = "../frm_registrar-usuarios.php";
+        alert("El nombre de usuario ya está registrado");
+        window.location.href = "../frm_reg  istrar-usuarios.php";
         </script>';
     }
-    $stmt->close();
-    $conn->close();
 }
