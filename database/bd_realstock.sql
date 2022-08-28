@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-07-2022 a las 19:01:29
+-- Tiempo de generación: 28-08-2022 a las 21:34:39
 -- Versión del servidor: 10.4.17-MariaDB
 -- Versión de PHP: 8.0.0
 
@@ -74,18 +74,6 @@ CREATE TABLE `tbl_producto` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `tbl_rol`
---
-
-CREATE TABLE `tbl_rol` (
-  `rol_id` int(11) NOT NULL,
-  `nombre` varchar(45) DEFAULT NULL,
-  `permisos` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL CHECK (json_valid(`permisos`))
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `tbl_subcategoria`
 --
 
@@ -130,17 +118,15 @@ CREATE TABLE `tbl_usuario` (
   `estado` varchar(45) DEFAULT NULL,
   `email` varchar(45) DEFAULT NULL,
   `nombres` varchar(45) DEFAULT NULL,
-  `apellidos` varchar(45) DEFAULT NULL,
-  `tbl_rol_id` int(11) DEFAULT NULL
+  `apellidos` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `tbl_usuario`
 --
 
-INSERT INTO `tbl_usuario` (`usuario_id`, `usuario`, `contrasena`, `estado`, `email`, `nombres`, `apellidos`, `tbl_rol_id`) VALUES
-(1, 'admin', '$2y$12$ZQbnQdxh8p9hCuO6x6L3fuGfU4I9cK2Ikbum.5z7OSNsJmrC3ElUK', 'activo', 'dade@wavcooka.tt', 'Shelton', 'Becker', NULL),
-(2, 'user', '$2y$12$/uQmD3IYMSK76zQRiM0tQugr3hhoynDUiOHdXIwiqJNP6D.fsaAAK', 'activo', 'pirmen@odakolu.bw', 'Alan', 'Hammond', NULL);
+INSERT INTO `tbl_usuario` (`usuario_id`, `usuario`, `contrasena`, `estado`, `email`, `nombres`, `apellidos`) VALUES
+(1, 'admin', '$2y$12$xLvHT2U5q7Q8741mGRcWA.JP2PXRacNvfdMcxKc2PT9VIjXsJcBQK', 'activo', 'de@ta.ao', 'Belle', 'Powers');
 
 --
 -- Índices para tablas volcadas
@@ -168,12 +154,6 @@ ALTER TABLE `tbl_producto`
   ADD KEY `fk_tbl_producto_tbl_subcategoria1_idx` (`tbl_subcategoria_id`);
 
 --
--- Indices de la tabla `tbl_rol`
---
-ALTER TABLE `tbl_rol`
-  ADD PRIMARY KEY (`rol_id`);
-
---
 -- Indices de la tabla `tbl_subcategoria`
 --
 ALTER TABLE `tbl_subcategoria`
@@ -191,8 +171,7 @@ ALTER TABLE `tbl_tercero`
 --
 ALTER TABLE `tbl_usuario`
   ADD PRIMARY KEY (`usuario_id`),
-  ADD UNIQUE KEY `usuario_UNIQUE` (`usuario`),
-  ADD KEY `fk_tbl_usuario_tbl_rol1_idx` (`tbl_rol_id`);
+  ADD UNIQUE KEY `usuario_UNIQUE` (`usuario`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -217,12 +196,6 @@ ALTER TABLE `tbl_producto`
   MODIFY `producto_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de la tabla `tbl_rol`
---
-ALTER TABLE `tbl_rol`
-  MODIFY `rol_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT de la tabla `tbl_subcategoria`
 --
 ALTER TABLE `tbl_subcategoria`
@@ -238,7 +211,7 @@ ALTER TABLE `tbl_tercero`
 -- AUTO_INCREMENT de la tabla `tbl_usuario`
 --
 ALTER TABLE `tbl_usuario`
-  MODIFY `usuario_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `usuario_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Restricciones para tablas volcadas
@@ -262,12 +235,6 @@ ALTER TABLE `tbl_producto`
 --
 ALTER TABLE `tbl_subcategoria`
   ADD CONSTRAINT `fk_Tbl_Subcategorias_Tbl_Categorias1` FOREIGN KEY (`tbl_categoria_id`) REFERENCES `tbl_categoria` (`categoria_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Filtros para la tabla `tbl_usuario`
---
-ALTER TABLE `tbl_usuario`
-  ADD CONSTRAINT `fk_tbl_usuario_tbl_rol1` FOREIGN KEY (`tbl_rol_id`) REFERENCES `tbl_rol` (`rol_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
