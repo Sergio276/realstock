@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-07-2022 a las 19:01:29
+-- Tiempo de generación: 28-08-2022 a las 21:20:24
 -- Versión del servidor: 10.4.17-MariaDB
 -- Versión de PHP: 8.0.0
 
@@ -139,8 +139,7 @@ CREATE TABLE `tbl_usuario` (
 --
 
 INSERT INTO `tbl_usuario` (`usuario_id`, `usuario`, `contrasena`, `estado`, `email`, `nombres`, `apellidos`, `tbl_rol_id`) VALUES
-(1, 'admin', '$2y$12$ZQbnQdxh8p9hCuO6x6L3fuGfU4I9cK2Ikbum.5z7OSNsJmrC3ElUK', 'activo', 'dade@wavcooka.tt', 'Shelton', 'Becker', NULL),
-(2, 'user', '$2y$12$/uQmD3IYMSK76zQRiM0tQugr3hhoynDUiOHdXIwiqJNP6D.fsaAAK', 'activo', 'pirmen@odakolu.bw', 'Alan', 'Hammond', NULL);
+(1, 'admin', '$2y$12$rPvJYaiG3O2YfQ32YEG6YOAecMP5fSUBVThpBxugqBrMxpaGVjviS', 'activo', 'de@ta.ao', 'Belle', 'Powers', NULL);
 
 --
 -- Índices para tablas volcadas
@@ -238,7 +237,7 @@ ALTER TABLE `tbl_tercero`
 -- AUTO_INCREMENT de la tabla `tbl_usuario`
 --
 ALTER TABLE `tbl_usuario`
-  MODIFY `usuario_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `usuario_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Restricciones para tablas volcadas
