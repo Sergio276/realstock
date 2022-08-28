@@ -86,11 +86,11 @@
                 </div>
                 <div class="form-section">
                   <label for="">Contraseña:</label>
-                  <input type="password" name="password" required placeholder="Ingrese la contraseña..." />
+                  <input type="password" minlength="8" name="password" required placeholder="Ingrese la contraseña..." />
                 </div>
                 <div class="form-section">
                   <label for="">Confirmar contraseña:</label>
-                  <input type="password" name="confirm_pass" required placeholder="Confirme la contraseña..." />
+                  <input type="password" minlength="8" name="confirm_pass" required placeholder="Confirme la contraseña..." />
                 </div>
                 <div class="form-section">
                   <label for="">Email:</label>
@@ -181,11 +181,11 @@
                           </div>
                           <div class="form-section">
                             <label for="">Contraseña:</label>
-                            <input type="password" placeholder="Ingrese la contraseña..." name="password" value="" />
+                            <input type="password" minlength="8" placeholder="Ingrese la contraseña..." name="password" value="" />
                           </div>
                           <div class="form-section">
                             <label for="">Confirmar contraseña:</label>
-                            <input type="password" placeholder="Confirme la contraseña..." name="confirm_pass" value="" />
+                            <input type="password" minlength="8" placeholder="Confirme la contraseña..." name="confirm_pass" value="" />
                           </div>
                           <div class="form-section">
                             <label for="">Email:</label>
