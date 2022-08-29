@@ -1,7 +1,7 @@
 <?php
 if (isset($_POST['save'])) {
 
-    if (!isset($_POST['product'], $_POST['third'])) {
+    if (!isset($_POST['product']) && !isset($_POST['third'])) {
         echo '<script type="text/javascript">
         alert("Tiene que seleccionar un producto y tercero");
         window.location.href = "../frm_registrar-movimientos.php";
