@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-08-2022 a las 21:34:39
+-- Tiempo de generación: 30-08-2022 a las 05:12:47
 -- Versión del servidor: 10.4.17-MariaDB
 -- Versión de PHP: 8.0.0
 
@@ -59,7 +59,7 @@ CREATE TABLE `tbl_movimiento` (
 
 CREATE TABLE `tbl_producto` (
   `producto_id` int(11) NOT NULL,
-  `no_serie` int(11) NOT NULL,
+  `no_serie` varchar(45) NOT NULL,
   `contador_inicial` varchar(45) DEFAULT NULL,
   `anotacion` varchar(45) DEFAULT NULL,
   `stock_maximo` varchar(45) DEFAULT NULL,

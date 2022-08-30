@@ -116,7 +116,7 @@ require_once './php/session-data.php';
                 </div>
                 <div class="form-section">
                   <label for="">No de serie:</label>
-                  <input required type="number" name="serial" min="1" placeholder="Ingrese el no de serie" />
+                  <input required type="text" name="serial" min="1" placeholder="Ingrese el no de serie" />
                 </div>
                 <div class="form-section">
                   <label for="">Contador inicial:</label>
@@ -263,7 +263,7 @@ require_once './php/session-data.php';
                           </div>
                           <div class="form-section">
                             <label for="">No de serie:</label>
-                            <input required type="number" name="serial" min="1" value="<?php echo $row['no_serie'] ?>" placeholder="Ingrese el no de serie" />
+                            <input required type="text" name="serial" min="1" value="<?php echo $row['no_serie'] ?>" placeholder="Ingrese el no de serie" />
                           </div>
                           <div class="form-section">
                             <label for="">Contador inicial:</label>
